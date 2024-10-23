@@ -1,0 +1,63 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  batch:
+  transform:
+    metric_statements:
+      - context: datapoint
+        statements:
+        - set(attributes["namespace"], resource.attributes["k8s.namespace.name"])
+        - set(attributes["container"], resource.attributes["k8s.container.name"])
+        - set(attributes["pod"], resource.attributes["k8s.pod.name"])
+
+exporters:
+  prometheus:
+    endpoint: otel-collector:8889
+    namespace: otel_collector
+    send_timestamps: true
+    metric_expiration: 30m
+    enable_open_metrics: true
+    add_metric_suffixes: false
+    resource_to_telemetry_conversion:
+      enabled: true
+  
+  otlp/jaeger:
+    endpoint: jaeger:4317
+    tls:
+      insecure: true
+  
+  debug:
+    verbosity: basic
+  
+  file/trace:
+    path: /etc/otelcol-contrib/collector-output-trace.json
+
+  file/meter:
+    path: /etc/otelcol-contrib/collector-output-meter.json
+
+extensions:
+  health_check:
+  pprof:
+  zpages:
+
+service:
+  extensions: [health_check, pprof, zpages]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [debug, file/trace, otlp/jaeger]
+    metrics:
+      receivers: [otlp]
+      processors: [transform]
+      exporters: [debug, file/meter, prometheus]
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [debug]

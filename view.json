@@ -1,0 +1,312 @@
+{
+    "resourceMetrics": [
+        {
+            "resource": {
+                "attributes": [
+                    {
+                        "key": "telemetry.sdk.language",
+                        "value": {
+                            "stringValue": "python"
+                        }
+                    },
+                    {
+                        "key": "telemetry.sdk.name",
+                        "value": {
+                            "stringValue": "opentelemetry"
+                        }
+                    },
+                    {
+                        "key": "telemetry.sdk.version",
+                        "value": {
+                            "stringValue": "1.24.0"
+                        }
+                    },
+                    {
+                        "key": "service.name",
+                        "value": {
+                            "stringValue": "unknown_service"
+                        }
+                    }
+                ]
+            },
+            "scopeMetrics": [
+                {
+                    "scope": {
+                        "name": "opentelemetry.instrumentation.django",
+                        "version": "0.45b0"
+                    },
+                    "metrics": [
+                        {
+                            "name": "http.server.active_requests",
+                            "description": "measures the number of concurrent HTTP requests those are currently in flight",
+                            "unit": "requests",
+                            "sum": {
+                                "dataPoints": [
+                                    {
+                                        "attributes": [
+                                            {
+                                                "key": "http.server_name",
+                                                "value": {
+                                                    "stringValue": "localhost"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.method",
+                                                "value": {
+                                                    "stringValue": "POST"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.flavor",
+                                                "value": {
+                                                    "stringValue": "1.1"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.scheme",
+                                                "value": {
+                                                    "stringValue": "http"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.host",
+                                                "value": {
+                                                    "stringValue": "localhost:8000"
+                                                }
+                                            }
+                                        ],
+                                        "startTimeUnixNano": "1714140889861827854",
+                                        "timeUnixNano": "1714141419822745778",
+                                        "asInt": "9"
+                                    },
+                                    {
+                                        "attributes": [
+                                            {
+                                                "key": "http.server_name",
+                                                "value": {
+                                                    "stringValue": "localhost"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.method",
+                                                "value": {
+                                                    "stringValue": "GET"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.flavor",
+                                                "value": {
+                                                    "stringValue": "1.1"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.scheme",
+                                                "value": {
+                                                    "stringValue": "http"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.host",
+                                                "value": {
+                                                    "stringValue": "localhost:8000"
+                                                }
+                                            }
+                                        ],
+                                        "startTimeUnixNano": "1714140889861827854",
+                                        "timeUnixNano": "1714141419822745778",
+                                        "asInt": "9"
+                                    }
+                                ],
+                                "aggregationTemporality": 2
+                            }
+                        },
+                        {
+                            "name": "http.server.duration",
+                            "description": "Duration of HTTP client requests.",
+                            "unit": "ms",
+                            "histogram": {
+                                "dataPoints": [
+                                    {
+                                        "attributes": [
+                                            {
+                                                "key": "net.host.port",
+                                                "value": {
+                                                    "intValue": "8000"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.server_name",
+                                                "value": {
+                                                    "stringValue": "localhost"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.method",
+                                                "value": {
+                                                    "stringValue": "GET"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.flavor",
+                                                "value": {
+                                                    "stringValue": "1.1"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.scheme",
+                                                "value": {
+                                                    "stringValue": "http"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.host",
+                                                "value": {
+                                                    "stringValue": "localhost:8000"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.status_code",
+                                                "value": {
+                                                    "intValue": "200"
+                                                }
+                                            }
+                                        ],
+                                        "startTimeUnixNano": "1714140890088824915",
+                                        "timeUnixNano": "1714141419822745778",
+                                        "count": "8100",
+                                        "sum": 3701937,
+                                        "bucketCounts": [
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "212",
+                                            "5054",
+                                            "2830",
+                                            "4",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0"
+                                        ],
+                                        "explicitBounds": [
+                                            0,
+                                            5,
+                                            10,
+                                            25,
+                                            50,
+                                            75,
+                                            100,
+                                            250,
+                                            500,
+                                            750,
+                                            1000,
+                                            2500,
+                                            5000,
+                                            7500,
+                                            10000
+                                        ],
+                                        "min": 187,
+                                        "max": 772
+                                    },
+                                    {
+                                        "attributes": [
+                                            {
+                                                "key": "net.host.port",
+                                                "value": {
+                                                    "intValue": "8000"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.server_name",
+                                                "value": {
+                                                    "stringValue": "localhost"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.method",
+                                                "value": {
+                                                    "stringValue": "POST"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.flavor",
+                                                "value": {
+                                                    "stringValue": "1.1"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.scheme",
+                                                "value": {
+                                                    "stringValue": "http"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.host",
+                                                "value": {
+                                                    "stringValue": "localhost:8000"
+                                                }
+                                            },
+                                            {
+                                                "key": "http.status_code",
+                                                "value": {
+                                                    "intValue": "201"
+                                                }
+                                            }
+                                        ],
+                                        "startTimeUnixNano": "1714140890088824915",
+                                        "timeUnixNano": "1714141419822745778",
+                                        "count": "8100",
+                                        "sum": 3642437,
+                                        "bucketCounts": [
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "264",
+                                            "5315",
+                                            "2512",
+                                            "9",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0",
+                                            "0"
+                                        ],
+                                        "explicitBounds": [
+                                            0,
+                                            5,
+                                            10,
+                                            25,
+                                            50,
+                                            75,
+                                            100,
+                                            250,
+                                            500,
+                                            750,
+                                            1000,
+                                            2500,
+                                            5000,
+                                            7500,
+                                            10000
+                                        ],
+                                        "min": 172,
+                                        "max": 843
+                                    }
+                                ],
+                                "aggregationTemporality": 2
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
